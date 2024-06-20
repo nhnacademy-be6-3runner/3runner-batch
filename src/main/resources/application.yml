@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    url: jdbc:mysql://133.186.241.167:3306/be6_3runner_dev
+    username: be6_3runner
+    password: tHos2g5st4@XH7mT
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  application:
+    name: 3runner-batch
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://admin:1234@eureka:8761/eureka
+  instance:
+    prefer-ip-address: true
