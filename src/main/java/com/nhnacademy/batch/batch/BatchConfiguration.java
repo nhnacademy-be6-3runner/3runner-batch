@@ -50,6 +50,9 @@ public class BatchConfiguration {
     public ItemProcessor<Member, Member> processor(){
         return (member-> {
             ZonedDateTime now = ZonedDateTime.now();
+            if(member.getStatus()==Status.Withdrawn){
+                return member;
+            }
             long yearsDifference = ChronoUnit.YEARS.between(now, member.getLast_login_date());
             if(yearsDifference >= 1){
                 member.setStatus(Status.Inactive);
