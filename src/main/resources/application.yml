@@ -6,11 +6,11 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
   application:
     name: 3runner-batch
-eureka:
-  client:
-    fetch-registry: true
-    register-with-eureka: true
-    service-url:
-      defaultZone: http://admin:1234@eureka:8761/eureka
-  instance:
-    prefer-ip-address: true
+#eureka:
+#  client:
+#    fetch-registry: true
+#    register-with-eureka: true
+#    service-url:
+#      defaultZone: http://admin:1234@eureka:8761/eureka
+#  instance:
+#    prefer-ip-address: true
