@@ -6,11 +6,15 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
   application:
     name: 3runner-batch
-#eureka:
-#  client:
-#    fetch-registry: true
-#    register-with-eureka: true
-#    service-url:
-#      defaultZone: http://admin:1234@eureka:8761/eureka
-#  instance:
-#    prefer-ip-address: true
+  profiles:
+    active: dev
+  rabbitmq:
+    host: 133.186.241.167
+    port: 5672
+    username: admin
+    password: nhnacademy123!
+
+# Log Level 설정
+logging:
+  level:
+    root: info
