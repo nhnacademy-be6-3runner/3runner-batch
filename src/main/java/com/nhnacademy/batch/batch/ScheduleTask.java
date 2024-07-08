@@ -12,17 +12,30 @@ import org.springframework.stereotype.Component;
 public class ScheduleTask {
     @Autowired
     private JobLauncher jobLauncher;
+    // @Autowired
+    // private Job job1;
     @Autowired
-    private Job job;
+    private Job job2;
     //@Scheduled(cron = "0 0 0 * * ?")
-    @Scheduled(fixedDelay = 5000)
-    public void reportCurrentTime(){
-        try{
+    // @Scheduled(fixedDelay = 1000*60*5)
+    // public void reportCurrentTime(){
+    //     try{
+    //         JobParameters jobParameters = new JobParametersBuilder()
+    //                 .addLong("time", System.currentTimeMillis())
+    //                 .toJobParameters();
+    //         jobLauncher.run(job1, jobParameters);
+    //     }catch(Exception e){
+    //         e.printStackTrace();
+    //     }
+    // }
+    @Scheduled(fixedDelay = 1000*60)
+    public void runMemberLevelUpgradeJob() {
+        try {
             JobParameters jobParameters = new JobParametersBuilder()
-                    .addLong("time", System.currentTimeMillis())
-                    .toJobParameters();
-            jobLauncher.run(job, jobParameters);
-        }catch(Exception e){
+                .addLong("time", System.currentTimeMillis())
+                .toJobParameters();
+            jobLauncher.run(job2, jobParameters);
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

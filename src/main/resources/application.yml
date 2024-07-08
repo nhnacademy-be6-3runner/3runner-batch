@@ -16,10 +16,10 @@ spring:
   application:
     name: 3runner-batch
   profiles:
-    active: dev
+    active: prod
   rabbitmq:
     host: 133.186.241.167
-    port: 5672
+    port: 6379
     username: admin
     password: nhnacademy123!
 
