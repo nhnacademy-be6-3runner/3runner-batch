@@ -16,7 +16,7 @@ spring:
   application:
     name: 3runner-batch
   profiles:
-    active: prod
+    active: dev
   rabbitmq:
     host: 133.186.241.167
     port: 6379

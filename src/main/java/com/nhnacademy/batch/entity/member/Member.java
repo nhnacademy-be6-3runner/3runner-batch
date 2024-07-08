@@ -1,69 +1,71 @@
 package com.nhnacademy.batch.entity.member;
 
-
-import com.nhnacademy.batch.entity.MemberAuth;
-import com.nhnacademy.batch.entity.member.enums.Grade;
-import com.nhnacademy.batch.entity.member.enums.Status;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+import java.security.AuthProvider;
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.nhnacademy.batch.entity.Purchase;
+import com.nhnacademy.batch.entity.member.enums.Grade;
+import com.nhnacademy.batch.entity.member.enums.Status;
+
 @Entity
 @AllArgsConstructor
-@Getter
 @NoArgsConstructor
+@Getter
 @Setter
-@Builder
 public class Member {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 
-    @NotNull
-    @Size(min = 1, max = 50)
-    private String password;
+	@NotNull
+	@Size(min = 6, max = 255)
+	private String password;
 
-    @NotNull
-    private Long point;
+	@NotNull
+	private Long point;
 
-    @NotNull
-    @Size(min = 1, max = 10)
-    private String name;
+	@NotNull
+	@Size(min = 1, max = 255)
+	private String name;
 
-    private int age;
+	private int age;
 
-    @NotNull
-    @Size(min = 1, max = 11)
-    private String phone;
+	@NotNull
+	@Size(min = 1, max = 11)
+	private String phone;
 
-    @NotNull
-    @Column(unique = true)
-    private String email;
+	@NotNull
+	@Column(unique = true)
+	private String email;
 
-    private ZonedDateTime birthday;
+	private ZonedDateTime birthday;
 
-    @NotNull
-    private Grade grade;
+	@NotNull
+	private Grade grade;
 
-    @NotNull
-    private Status status;
+	@NotNull
+	private Status status;
 
-    private ZonedDateTime last_login_date;
+	private ZonedDateTime lastLoginDate;
 
-    @NotNull
-    private ZonedDateTime created_at;
+	@NotNull
+	private ZonedDateTime createdAt;
 
-    private ZonedDateTime modified_at;
-    private ZonedDateTime deleted_at;
+	private ZonedDateTime modifiedAt;
+	private ZonedDateTime deletedAt;
 
 
-    @OneToMany(mappedBy = "member",cascade = CascadeType.ALL,orphanRemoval = true)
-    private List<MemberAuth> memberAuthSet = new ArrayList<>();
-
+	@OneToMany(mappedBy = "member", cascade = CascadeType.ALL, orphanRemoval = true)
+	private List<Purchase> purchaseList = new ArrayList<>();
 
 }
