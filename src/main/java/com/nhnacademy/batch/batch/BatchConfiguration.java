@@ -19,6 +19,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.transaction.PlatformTransactionManager;
 
+import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.temporal.ChronoUnit;
 
@@ -64,17 +65,21 @@ public class BatchConfiguration {
     @Bean
     public ItemProcessor<Member, Member> statusUpdateProcessor(){
         return (member-> {
-            ZonedDateTime now = ZonedDateTime.now();
-            if(member.getStatus()==Status.Withdrawn){
-                return member;
-            }
-            long yearsDifference = ChronoUnit.YEARS.between(now, member.getLast_login_date());
-            if(yearsDifference >= 1){
-                member.setStatus(Status.Inactive);
+            ZonedDateTime now = ZonedDateTime.now(ZoneId.of("Asia/Seoul"));
+            long minutes = ChronoUnit.MINUTES.between(member.getLastLoginDate(),now);
+            if(minutes>=5){
+                member.setStatus(Status.Withdrawn);
                 return member;
             }else{
                 return member;
             }
+            //long yearsDifference = ChronoUnit.YEARS.between(now, member.getLastLoginDate());
+            // if(yearsDifference >= 1){
+            //     member.setStatus(Status.Inactive);
+            //     return member;
+            // }else{
+            //     return member;
+            // }
         });
     }
     @Bean
