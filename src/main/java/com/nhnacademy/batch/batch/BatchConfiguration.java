@@ -68,7 +68,7 @@ public class BatchConfiguration {
             ZonedDateTime now = ZonedDateTime.now(ZoneId.of("Asia/Seoul"));
             long minutes = ChronoUnit.MINUTES.between(member.getLastLoginDate(),now);
             if(minutes>=5){
-                member.setStatus(Status.Withdrawn);
+                member.setStatus(Status.Inactive);
                 return member;
             }else{
                 return member;
