@@ -61,5 +61,5 @@ jobs:
             if sudo docker service ls | grep -q 'batch'; then
               sudo docker service rm batch
             fi
-            sudo docker service create --name batch --publish 8084:8080 --network back_network_swarm batch-image
+            sudo docker service create --name batch --publish 8084:8084 --network back_network_swarm batch-image
 
