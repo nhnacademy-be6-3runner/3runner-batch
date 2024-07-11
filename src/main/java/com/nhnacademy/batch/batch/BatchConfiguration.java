@@ -65,9 +65,9 @@ public class BatchConfiguration {
     @Bean
     public ItemProcessor<Member, Member> statusUpdateProcessor(){
         return (member-> {
-            ZonedDateTime now = ZonedDateTime.now(ZoneId.of("Asia/Seoul"));
-            long minutes = ChronoUnit.MINUTES.between(member.getLastLoginDate(),now);
-            if(minutes>=5){
+            ZonedDateTime now = ZonedDateTime.now(ZoneId.of("UTC"));
+            long dayDifference = ChronoUnit.DAYS.between(member.getLastLoginDate(),now);
+            if(dayDifference>=7){
                 member.setStatus(Status.Inactive);
                 return member;
             }else{
