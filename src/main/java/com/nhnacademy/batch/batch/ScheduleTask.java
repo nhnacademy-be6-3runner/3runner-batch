@@ -13,16 +13,29 @@ public class ScheduleTask {
     @Autowired
     private JobLauncher jobLauncher;
     @Autowired
-    private Job job;
+    private Job job1;
+    @Autowired
+    private Job job2;
     //@Scheduled(cron = "0 0 0 * * ?")
-    @Scheduled(fixedDelay = 5000)
+    @Scheduled(cron = "0 0 0 * * *")
     public void reportCurrentTime(){
         try{
             JobParameters jobParameters = new JobParametersBuilder()
                     .addLong("time", System.currentTimeMillis())
                     .toJobParameters();
-            jobLauncher.run(job, jobParameters);
+            jobLauncher.run(job1, jobParameters);
         }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+    @Scheduled(cron = "0 0 0 * * *")
+    public void runMemberLevelUpgradeJob() {
+        try {
+            JobParameters jobParameters = new JobParametersBuilder()
+                .addLong("time", System.currentTimeMillis())
+                .toJobParameters();
+            jobLauncher.run(job2, jobParameters);
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
