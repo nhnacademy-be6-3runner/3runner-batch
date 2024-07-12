@@ -13,13 +13,8 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @SpringBootTest
 class ApplicationTests {
-
-	@Autowired
-	private BookService bookService;
-
 	@Test
 	void contextLoads() throws IOException {
-		bookService.AllBookToElasticSearchFromDB();
 
 	}
 
