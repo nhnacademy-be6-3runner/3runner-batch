@@ -15,6 +15,7 @@ spring:
     username: be6_3runner
     password: tHos2g5st4@XH7mT
     driver-class-name: com.mysql.cj.jdbc.Driver
+    type: org.apache.commons.dbcp2.BasicDataSource
     dbcp2:
       initial-size: 5
       max-total: 20
@@ -30,12 +31,20 @@ spring:
     port: 6379
     username: admin
     password: nhnacademy123!
+  jpa:
+    show-sql: true
+
+
+
+elasticsearch:
+  url: 115.94.72.198:9200
+  key: b0FEM241QUJ6WmRyRUdYWG9LbUs6RVZ4WkNYM09TNTZvUU9qb0xxM09JZw==
+
 
 # Log Level 설정
-logging:
-  level:
-    root: info
+#logging:
+#  level:
+#    root: info
 
 server:
-  port: 8091
-#    prefer-ip-address: true
+  port: 8084
