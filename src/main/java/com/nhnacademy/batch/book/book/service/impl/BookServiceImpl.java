@@ -5,10 +5,12 @@ import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.List;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.nhnacademy.batch.book.book.repository.BookDocumentRepository;
+import com.nhnacademy.batch.book.book.repository.BookRedisRepository;
 import com.nhnacademy.batch.book.book.repository.BookRepository;
 import com.nhnacademy.batch.book.book.repository.BookRestTemplate;
 import com.nhnacademy.batch.book.book.repository.JsonFileLoadRepository;
@@ -31,10 +33,11 @@ public class BookServiceImpl implements BookService {
 	private final JsonFileLoadRepository jsonFileLoadRepository;
 	private final BookRestTemplate bookRestTemplate;
 	private final BookDocumentRepository bookDocumentRepository;
-
+	private final BookRedisRepository bookRedisRepository;
 	private final TagCustomRepository tagCustomRepository;
 	private final CategoryCustomRepository categoryCustomRepository;
 
+	private final static String DEFAULT_BOOK_ALIAS = "3runner_book_alias";
 	private final static String DEFAULT_BOOK_INDEX = "3runner_book_";
 	private final static long BOOK_SAVE_SIZE = 300;
 
@@ -43,7 +46,7 @@ public class BookServiceImpl implements BookService {
 	 *
 	 */
 	@Override
-	public void AllBookToElasticSearchFromDB() {
+	public void allBookToElasticSearchFromDB() {
 		LocalDate currentDate = LocalDate.now();
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd");
 
@@ -60,7 +63,7 @@ public class BookServiceImpl implements BookService {
 
 		long maxBookId = bookRepository.maxBookId();
 
-		long startBookId = 1;
+		long startBookId = 0;
 		while (startBookId <= maxBookId) {
 			try {
 				String bulkBody = splitSendBulkBody(startBookId, indexName);
@@ -80,6 +83,16 @@ public class BookServiceImpl implements BookService {
 
 	}
 
+	@Override
+	public void elasticBookUpdate() {
+		if (bookRedisRepository.isContent()) {
+			String bulkBody = bookRedisRepository.getBookUpdateElasticBody();
+			ResponseEntity<String> response = bookRestTemplate.sendBulk(bulkBody, DEFAULT_BOOK_ALIAS);
+			log.info("업데이트 결과 -> {}", response);
+		}
+
+	}
+
 	/**
 	 * BOOK_SAVE_SIZE 식 끊어서 db 에서 책 정보를 가져와 elastic 에 저장
 	 * @param startBookId 시작하는 bookId
@@ -87,7 +100,7 @@ public class BookServiceImpl implements BookService {
 	 * @return bulk 쿼리의 body
 	 */
 	private String splitSendBulkBody(long startBookId, String indexName) {
-		long finishBookId = startBookId + BOOK_SAVE_SIZE - 1;
+		long finishBookId = startBookId + BOOK_SAVE_SIZE;
 		List<BookDocument> bookDocumentList = bookRepository.bookDocumentList(startBookId, finishBookId);
 		List<BookTagResponse> bookTagResponseList = tagCustomRepository.bookCategories(startBookId, finishBookId);
 		List<BookCategoryResponse> bookCategoryResponseList = categoryCustomRepository.bookCategories(startBookId,

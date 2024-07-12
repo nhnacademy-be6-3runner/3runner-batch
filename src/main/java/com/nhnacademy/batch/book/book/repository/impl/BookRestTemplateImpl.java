@@ -5,6 +5,7 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.client.RestTemplate;
 
@@ -40,11 +41,12 @@ public class BookRestTemplateImpl implements BookRestTemplate {
 
 	/**
 	 * bulk 쿼리 보내기
-	 * @param body 쿼리 내용
-	 * @param indexName    인덱스
+	 *
+	 * @param body      쿼리 내용
+	 * @param indexName 인덱스
 	 */
 	@Override
-	public void sendBulk(String body, String indexName) {
+	public ResponseEntity<String> sendBulk(String body, String indexName) {
 		RestTemplate restTemplate = new RestTemplate();
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("Authorization", "ApiKey " + apiKey);
@@ -52,7 +54,7 @@ public class BookRestTemplateImpl implements BookRestTemplate {
 
 		HttpEntity<String> entity = new HttpEntity<>(body, headers);
 		String url = "http://" + elasticSearchUrl + "/" + indexName + "/_bulk";
-		restTemplate.exchange(url, HttpMethod.POST, entity, String.class);
+		return restTemplate.exchange(url, HttpMethod.POST, entity, String.class);
 	}
 
 	@Override
