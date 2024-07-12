@@ -56,6 +56,7 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script: |
             cd /home/nhnacademy/batch
+            
             sudo docker stop batch || true
             sudo docker rm batch || true
             sudo docker build -t batch-image .
