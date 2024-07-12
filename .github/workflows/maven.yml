@@ -56,10 +56,9 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script: |
             cd /home/nhnacademy/batch
-            sudo docker build -t batch-image .
             
-            if sudo docker service ls | grep -q 'batch'; then
-              sudo docker service rm batch
-            fi
-            sudo docker service create --name batch --publish 8084:8084 --network back_network_swarm batch-image
+            sudo docker stop batch || true
+            sudo docker rm batch || true
+            sudo docker build -t batch-image .
+            sudo docker run -d -p 8084:8080 --name batch --net back_network batch-image
 
