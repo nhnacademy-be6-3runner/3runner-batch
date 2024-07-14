@@ -7,10 +7,8 @@ import org.springframework.stereotype.Repository;
 import com.nhnacademy.batch.book.book.repository.BookCustomRepository;
 import com.nhnacademy.batch.book.book.response.BookDocument;
 import com.nhnacademy.batch.entity.book.QBook;
-import com.nhnacademy.batch.entity.bookCategory.QBookCategory;
 import com.nhnacademy.batch.entity.bookImage.QBookImage;
 import com.nhnacademy.batch.entity.bookImage.enums.BookImageType;
-import com.nhnacademy.batch.entity.category.QCategory;
 import com.nhnacademy.batch.entity.totalImage.QTotalImage;
 import com.querydsl.core.types.Projections;
 import com.querydsl.jpa.impl.JPAQueryFactory;
@@ -23,8 +21,6 @@ public class BookCustomRepositoryImpl implements BookCustomRepository {
 	private static final QBook qBook = QBook.book;
 	private static final QBookImage qBookImage = QBookImage.bookImage;
 	private static final QTotalImage qTotalImage = QTotalImage.totalImage;
-	private static final QCategory qCategory = QCategory.category;
-	private static final QBookCategory qBookCategory = QBookCategory.bookCategory;
 
 	public BookCustomRepositoryImpl(EntityManager entityManager) {
 		this.jpaQueryFactory = new JPAQueryFactory(entityManager);

@@ -15,11 +15,15 @@ public class BookTask {
 	private final BookService bookService;
 	private static boolean allBookPlaying = false;
 
+	public void changeBookPlaying(boolean allBookPlaying) {
+		BookTask.allBookPlaying = allBookPlaying;
+	}
+
 	@Scheduled(cron = "0 0 2 * * ?")
 	public void allBookElasticSearchFromDB() throws Exception {
-		allBookPlaying = true;
+		changeBookPlaying(true);
 		bookService.allBookToElasticSearchFromDB();
-		allBookPlaying = false;
+		changeBookPlaying(false);
 	}
 
 	@Scheduled(fixedDelay = 10000)

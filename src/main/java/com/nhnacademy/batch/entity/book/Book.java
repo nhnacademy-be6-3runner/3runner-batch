@@ -32,7 +32,6 @@ public class Book {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Setter
 	private long id;
 
 	@Size(min = 1, max = 50)
@@ -99,60 +98,4 @@ public class Book {
 		this.createdAt = ZonedDateTime.now();
 	}
 
-	public Book(String title, String description, ZonedDateTime publishedDate, int price,
-		int quantity, int sellingPrice, int viewCount, boolean packing, String author, String isbn,
-		String publisher, List<BookCategory> bookCategoryList, List<BookTag> bookTagList,
-		List<BookImage> bookImageList) {
-		this.title = title;
-		this.description = description;
-		this.publishedDate = publishedDate;
-		this.price = price;
-		this.quantity = quantity;
-		this.sellingPrice = sellingPrice;
-		this.viewCount = viewCount;
-		this.packing = packing;
-		this.author = author;
-		this.isbn = isbn;
-		this.publisher = publisher;
-		this.bookCategoryList = bookCategoryList != null ? bookCategoryList : new ArrayList<>();
-		this.bookTagList = bookTagList != null ? bookTagList : new ArrayList<>();
-		this.bookImageList = bookImageList != null ? bookImageList : new ArrayList<>();
-	}
-
-	/**
-	 * 도서 카테고리 추가 메서드.
-	 *
-	 * @param bookCategory 도서-카테고리
-	 */
-	public void addBookCategory(BookCategory bookCategory) {
-		this.bookCategoryList.add(bookCategory);
-		bookCategory.setBook(this);
-	}
-
-	/**
-	 * 도서 카테고리 삭제 메서드.
-	 *
-	 * @param bookCategory 도서-카테고리
-	 */
-	public void removeBookCategory(BookCategory bookCategory) {
-		this.bookCategoryList.remove(bookCategory);
-		bookCategory.setBook(null); // 양방향 해제
-	}
-
-	/**
-	 * 이미지 추가 메서드
-	 */
-	public void addBookImage(BookImage bookImage) {
-		this.bookImageList.add(bookImage);
-		bookImage.setBook(this);
-	}
-
-	public void addBookTag(BookTag bookTag) {
-		this.bookTagList.add(bookTag);
-		bookTag.setBook(this);
-	}
-
-	public void viewBook() {
-		viewCount++;
-	}
 }

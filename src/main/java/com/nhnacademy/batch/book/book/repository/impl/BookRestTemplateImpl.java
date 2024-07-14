@@ -11,7 +11,10 @@ import org.springframework.web.client.RestTemplate;
 
 import com.nhnacademy.batch.book.book.repository.BookRestTemplate;
 
+import lombok.RequiredArgsConstructor;
+
 @Repository
+@RequiredArgsConstructor
 public class BookRestTemplateImpl implements BookRestTemplate {
 
 	@Value("${elasticsearch.key}")
@@ -19,6 +22,8 @@ public class BookRestTemplateImpl implements BookRestTemplate {
 
 	@Value("${elasticsearch.url}")
 	private String elasticSearchUrl;
+
+	private final RestTemplate restTemplate;
 
 	/**
 	 * 새로운 인덱스를 생성하는 API를 보내는 메소드
@@ -28,7 +33,6 @@ public class BookRestTemplateImpl implements BookRestTemplate {
 	 */
 	@Override
 	public void saveNewIndex(String body, String indexName) {
-		RestTemplate restTemplate = new RestTemplate();
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("Authorization", "ApiKey " + apiKey);
 		headers.setContentType(MediaType.APPLICATION_JSON);
@@ -47,7 +51,6 @@ public class BookRestTemplateImpl implements BookRestTemplate {
 	 */
 	@Override
 	public ResponseEntity<String> sendBulk(String body, String indexName) {
-		RestTemplate restTemplate = new RestTemplate();
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("Authorization", "ApiKey " + apiKey);
 		headers.setContentType(MediaType.APPLICATION_JSON);
@@ -59,7 +62,6 @@ public class BookRestTemplateImpl implements BookRestTemplate {
 
 	@Override
 	public void sendAlias(String body) {
-		RestTemplate restTemplate = new RestTemplate();
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("Authorization", "ApiKey " + apiKey);
 		headers.setContentType(MediaType.APPLICATION_JSON);
@@ -69,5 +71,3 @@ public class BookRestTemplateImpl implements BookRestTemplate {
 	}
 
 }
-
-//curl -X POST "http://localhost:9200/3runner_book_20240711/_bulk

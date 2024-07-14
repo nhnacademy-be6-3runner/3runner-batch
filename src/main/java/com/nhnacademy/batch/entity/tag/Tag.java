@@ -14,14 +14,12 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.Size;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Getter
-@AllArgsConstructor
 @NoArgsConstructor
 public class Tag {
 	@Id
@@ -38,4 +36,7 @@ public class Tag {
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "tag", cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<BookTag> bookTagList = new ArrayList<>();
 
+	public Tag(String name) {
+		this.name = name;
+	}
 }

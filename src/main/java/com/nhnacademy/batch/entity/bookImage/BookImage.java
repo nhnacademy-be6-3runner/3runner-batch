@@ -13,14 +13,12 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import jakarta.validation.constraints.NotNull;
 import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Entity
-@AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class BookImage {
 
@@ -35,6 +33,7 @@ public class BookImage {
 	@ManyToOne
 	private Book book;
 
+	@Setter
 	@OneToOne(cascade = CascadeType.ALL)
 	private TotalImage totalImage;
 
@@ -43,10 +42,4 @@ public class BookImage {
 		this.book = book;
 		this.totalImage = totalImage;
 	}
-
-	public BookImage(BookImageType type, TotalImage totalImage) {
-		this.type = type;
-		this.totalImage = totalImage;
-	}
-
 }

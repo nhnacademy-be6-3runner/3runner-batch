@@ -68,10 +68,11 @@ public class BookServiceImpl implements BookService {
 			try {
 				String bulkBody = splitSendBulkBody(startBookId, indexName);
 				bookRestTemplate.sendBulk(bulkBody, indexName);
-				startBookId += BOOK_SAVE_SIZE;
 				log.info("{} ~ {} 범위 저장 성공", startBookId, (startBookId + BOOK_SAVE_SIZE));
 			} catch (Exception e) {
 				log.error("{} ~ {} 안에서 에러가 발생하였습니다. ", startBookId, (startBookId + BOOK_SAVE_SIZE));
+			} finally {
+				startBookId += BOOK_SAVE_SIZE;
 			}
 		}
 		log.info("bulk 완료");

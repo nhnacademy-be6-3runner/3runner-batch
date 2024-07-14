@@ -16,7 +16,7 @@ import lombok.extern.slf4j.Slf4j;
 @Repository
 public class JsonFileLoadRepositoryImpl implements JsonFileLoadRepository {
 
-	private final static String DEFAULT_FILE_NAME = "/elastic/";
+	private final static String DEFAULT_FILE_NAME = "elastic/";
 
 	/**
 	 * 엘라스틱 서치의 인덱스 설정 값을 가져오기 위해 사용
