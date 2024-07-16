@@ -49,18 +49,6 @@ public class Category {
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "category", cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<BookCategory> bookCategoryList = new ArrayList<>();
 
-	public void setParent(Category parent) {
-		this.parent = parent;
-	}
-
-	public void addChildren(Category child) {
-		if (this.children == null) {
-			this.children = new ArrayList<>();
-		}
-		child.setParent(this);
-		this.children.add(child);
-	}
-
 	public Category(String name) {
 		this.name = name;
 	}

@@ -20,6 +20,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.test.util.ReflectionTestUtils;
 import org.springframework.web.client.RestTemplate;
 
+import com.nhnacademy.batch.batch.book.book.repository.impl.BookRestTemplateImpl;
+
 @ExtendWith(MockitoExtension.class)
 class BookRestTemplateImplTest {
 

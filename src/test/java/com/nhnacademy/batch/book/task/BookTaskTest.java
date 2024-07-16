@@ -10,7 +10,8 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
-import com.nhnacademy.batch.book.book.service.BookService;
+import com.nhnacademy.batch.batch.book.book.service.BookService;
+import com.nhnacademy.batch.batch.book.task.BookTask;
 
 import lombok.extern.slf4j.Slf4j;
 

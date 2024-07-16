@@ -16,16 +16,17 @@ import org.mockito.MockitoAnnotations;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 
-import com.nhnacademy.batch.book.book.repository.BookDocumentRepository;
-import com.nhnacademy.batch.book.book.repository.BookRedisRepository;
-import com.nhnacademy.batch.book.book.repository.BookRepository;
-import com.nhnacademy.batch.book.book.repository.BookRestTemplate;
-import com.nhnacademy.batch.book.book.repository.JsonFileLoadRepository;
-import com.nhnacademy.batch.book.book.response.BookDocument;
-import com.nhnacademy.batch.book.category.repository.CategoryCustomRepository;
-import com.nhnacademy.batch.book.category.response.BookCategoryResponse;
-import com.nhnacademy.batch.book.tag.repository.TagCustomRepository;
-import com.nhnacademy.batch.book.tag.response.BookTagResponse;
+import com.nhnacademy.batch.batch.book.book.repository.BookDocumentRepository;
+import com.nhnacademy.batch.batch.book.book.repository.BookRedisRepository;
+import com.nhnacademy.batch.batch.book.book.repository.BookRepository;
+import com.nhnacademy.batch.batch.book.book.repository.BookRestTemplate;
+import com.nhnacademy.batch.batch.book.book.repository.JsonFileLoadRepository;
+import com.nhnacademy.batch.batch.book.book.response.BookDocument;
+import com.nhnacademy.batch.batch.book.book.service.impl.BookServiceImpl;
+import com.nhnacademy.batch.batch.book.category.repository.CategoryCustomRepository;
+import com.nhnacademy.batch.batch.book.category.response.BookCategoryResponse;
+import com.nhnacademy.batch.batch.book.tag.repository.TagCustomRepository;
+import com.nhnacademy.batch.batch.book.tag.response.BookTagResponse;
 
 import ch.qos.logback.classic.spi.ILoggingEvent;
 import ch.qos.logback.core.read.ListAppender;

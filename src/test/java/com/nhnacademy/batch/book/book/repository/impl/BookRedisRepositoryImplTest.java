@@ -14,6 +14,8 @@ import org.mockito.MockitoAnnotations;
 import org.springframework.data.redis.core.HashOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 
+import com.nhnacademy.batch.batch.book.book.repository.impl.BookRedisRepositoryImpl;
+
 class BookRedisRepositoryImplTest {
 
 	@InjectMocks

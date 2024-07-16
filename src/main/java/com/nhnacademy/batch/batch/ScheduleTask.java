@@ -4,8 +4,6 @@ import org.springframework.batch.core.Job;
 import org.springframework.batch.core.launch.JobLauncher;
 import org.springframework.stereotype.Component;
 
-import com.nhnacademy.batch.book.book.repository.BookRepository;
-
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -16,7 +14,6 @@ public class ScheduleTask {
 	private final JobLauncher jobLauncher;
 	private final Job job1;
 	private final Job job2;
-	private final BookRepository bookRepository;
 
 	// //@Scheduled(cron = "0 0 0 * * ?")
 	// @Scheduled(fixedDelay = 1000 * 60 * 2)

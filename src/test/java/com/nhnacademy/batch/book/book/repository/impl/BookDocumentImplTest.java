@@ -8,8 +8,9 @@ import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import com.nhnacademy.batch.book.book.exception.ElasticBulkMadeException;
-import com.nhnacademy.batch.book.book.response.BookDocument;
+import com.nhnacademy.batch.batch.book.book.exception.ElasticBulkMadeException;
+import com.nhnacademy.batch.batch.book.book.repository.impl.BookDocumentImpl;
+import com.nhnacademy.batch.batch.book.book.response.BookDocument;
 
 public class BookDocumentImplTest {
 
