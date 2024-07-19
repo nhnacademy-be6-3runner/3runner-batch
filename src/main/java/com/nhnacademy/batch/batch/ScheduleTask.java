@@ -18,7 +18,7 @@ public class ScheduleTask {
 	private final Job job1;
 	private final Job job2;
 
-	@Scheduled(fixedDelay = 1000 * 60 * 2)
+	@Scheduled(cron = "1 30 0 * * ?")
 	public void reportCurrentTime() {
 		try {
 			JobParameters jobParameters = new JobParametersBuilder()
@@ -30,7 +30,7 @@ public class ScheduleTask {
 		}
 	}
 
-	@Scheduled(fixedDelay = 1000 * 60 * 2)
+	@Scheduled(cron = "1 0 0 * * ?")
 	public void runMemberLevelUpgradeJob() {
 		try {
 			JobParameters jobParameters = new JobParametersBuilder()
