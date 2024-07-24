@@ -1,8 +1,8 @@
 {
   "settings": {
     "index": {
-      "number_of_shards": 2,
-      "number_of_replicas": 1
+      "number_of_shards": 1,
+      "number_of_replicas": 0
     },
     "analysis": {
       "analyzer": {
@@ -42,7 +42,7 @@
         "nori_tokenizer": {
           "type": "nori_tokenizer",
           "decompound_mode": "mixed",
-          "user_dictionary": "3runner/custom_dictionary.txt"
+          "user_dictionary": "userdictionary/3runner/custom_dictionary.txt"
         },
         "whitespace_tokenizer": {
           "type": "whitespace"
@@ -74,15 +74,15 @@
         },
         "custom_stop": {
           "type": "stop",
-          "stopwords_path": "3runner/custom_stop_words.txt"
+          "stopwords_path": "userdictionary/3runner/custom_stop_words.txt"
         },
         "custom_synonym": {
           "type": "synonym",
-          "synonyms_path": "3runner/custom_synoym.txt"
+          "synonyms_path": "userdictionary/3runner/custom_synoym.txt"
         },
         "bad_word": {
           "type": "stop",
-          "stopwords_path": "3runner/custom_bad_words.txt"
+          "stopwords_path": "userdictionary/3runner/custom_bad_words.txt"
         }
       }
     }
