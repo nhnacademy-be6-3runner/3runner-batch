@@ -26,7 +26,7 @@ public class BookTask {
 		changeBookPlaying(false);
 	}
 
-	@Scheduled(fixedDelay = 10000)
+	@Scheduled(fixedDelay = 60000)
 	public void bookElasticSearchChecking() throws Exception {
 		log.info("elastic search 변경한 내용을 감지 중입니다.");
 		if (!allBookPlaying) {
