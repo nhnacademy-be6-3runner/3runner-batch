@@ -38,12 +38,6 @@ spring:
 elasticsearch:
   url: 115.94.72.197:9200
   key: Q0I4SjQ1QUIyMlNic1BPbmdUVmU6YlRpV3RwSlFTMGFESjQxWnRXWlBiUQ==
-  
-
-# Log Level 설정
-#logging:
-#  level:
-#    root: info
 
 server:
   port: 8084
