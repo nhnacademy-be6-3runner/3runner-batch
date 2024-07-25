@@ -28,10 +28,10 @@ public class BookTask {
 
 	@Scheduled(fixedDelay = 10000)
 	public void bookElasticSearchChecking() throws Exception {
-		log.info("시작");
+		log.info("elastic search 변경한 내용을 감지 중입니다.");
 		if (!allBookPlaying) {
 			bookService.elasticBookUpdate();
 		}
-		log.info("끝");
+		log.info("elastic search 변경한 내용이 끝났습니다.");
 	}
 }
