@@ -12,7 +12,6 @@ import lombok.extern.slf4j.Slf4j;
 class ApplicationTests {
 	@Test
 	void contextLoads() throws IOException {
-
 	}
 
 }

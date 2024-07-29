@@ -87,9 +87,10 @@ public class BookServiceImpl implements BookService {
 	@Override
 	public void elasticBookUpdate() {
 		if (bookRedisRepository.isContent()) {
+			log.info("elastic search 변경 내용이 감지 되었습니다.");
 			String bulkBody = bookRedisRepository.getBookUpdateElasticBody();
 			ResponseEntity<String> response = bookRestTemplate.sendBulk(bulkBody, DEFAULT_BOOK_ALIAS);
-			log.info("업데이트 결과 -> {}", response);
+			log.info("elastic search 변경을 완료 했습니다. 내용 : {}", response.getBody());
 		}
 
 	}
