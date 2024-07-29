@@ -1,4 +1,4 @@
-package com.nhnacademy.batch.entity.bookTag;
+package com.nhnacademy.batch.entity.booktag;
 
 import static org.assertj.core.api.Assertions.*;
 

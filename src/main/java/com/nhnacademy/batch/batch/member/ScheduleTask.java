@@ -1,4 +1,4 @@
-package com.nhnacademy.batch.batch;
+package com.nhnacademy.batch.batch.member;
 
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.JobParameters;

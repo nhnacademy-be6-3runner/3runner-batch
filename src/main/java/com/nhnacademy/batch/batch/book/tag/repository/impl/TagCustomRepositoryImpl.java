@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import com.nhnacademy.batch.batch.book.tag.repository.TagCustomRepository;
 import com.nhnacademy.batch.batch.book.tag.response.BookTagResponse;
-import com.nhnacademy.batch.entity.bookTag.QBookTag;
+import com.nhnacademy.batch.entity.booktag.QBookTag;
 import com.nhnacademy.batch.entity.tag.QTag;
 import com.querydsl.core.types.Projections;
 import com.querydsl.jpa.impl.JPAQueryFactory;

@@ -10,7 +10,7 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import com.nhnacademy.batch.entity.book.Book;
-import com.nhnacademy.batch.entity.bookTag.BookTag;
+import com.nhnacademy.batch.entity.booktag.BookTag;
 
 import jakarta.persistence.EntityManager;
 

@@ -1,6 +1,5 @@
-package com.nhnacademy.batch.batch;
+package com.nhnacademy.batch.batch.member;
 
-import com.nhnacademy.batch.GradeUpdateProcessor;
 import com.nhnacademy.batch.entity.member.Member;
 import com.nhnacademy.batch.entity.member.enums.Status;
 import jakarta.persistence.EntityManagerFactory;
@@ -16,7 +15,6 @@ import org.springframework.batch.item.database.JpaPagingItemReader;
 import org.springframework.batch.item.database.builder.JpaPagingItemReaderBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.transaction.PlatformTransactionManager;
 
 import java.time.ZoneId;
@@ -28,14 +26,17 @@ import java.time.temporal.ChronoUnit;
 public class BatchConfiguration {
     private final EntityManagerFactory entityManagerFactory;
     private final PlatformTransactionManager transactionManager;
+
     @Bean
     public Job job1(JobRepository jobRepository, Step step1){
         return new JobBuilder("memberStatusJob", jobRepository).start(step1).build();
     }
+
     @Bean
     public Job job2(JobRepository jobRepository, Step step2){
         return new JobBuilder("memberGradeJob", jobRepository).start(step2).build();
     }
+
     @Bean
     public Step step1(JobRepository jobRepository){
         return new StepBuilder("statusUpdateStep", jobRepository)
@@ -73,18 +74,11 @@ public class BatchConfiguration {
             }else{
                 return member;
             }
-            //long yearsDifference = ChronoUnit.YEARS.between(now, member.getLastLoginDate());
-            // if(yearsDifference >= 1){
-            //     member.setStatus(Status.Inactive);
-            //     return member;
-            // }else{
-            //     return member;
-            // }
         });
     }
     @Bean
     public JpaItemWriter<Member> statusUpdateWriter(){
-        JpaItemWriter<Member> writer = new JpaItemWriter<Member>();
+        JpaItemWriter<Member> writer = new JpaItemWriter<>();
         writer.setEntityManagerFactory(entityManagerFactory);
         return writer;
     }

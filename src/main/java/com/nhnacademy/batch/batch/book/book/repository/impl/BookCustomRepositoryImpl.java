@@ -7,9 +7,9 @@ import org.springframework.stereotype.Repository;
 import com.nhnacademy.batch.batch.book.book.repository.BookCustomRepository;
 import com.nhnacademy.batch.batch.book.book.response.BookDocument;
 import com.nhnacademy.batch.entity.book.QBook;
-import com.nhnacademy.batch.entity.bookImage.QBookImage;
-import com.nhnacademy.batch.entity.bookImage.enums.BookImageType;
-import com.nhnacademy.batch.entity.totalImage.QTotalImage;
+import com.nhnacademy.batch.entity.bookimage.QBookImage;
+import com.nhnacademy.batch.entity.bookimage.enums.BookImageType;
+import com.nhnacademy.batch.entity.totalimage.QTotalImage;
 import com.querydsl.core.types.Projections;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 
@@ -47,6 +47,5 @@ public class BookCustomRepositoryImpl implements BookCustomRepository {
 			.where(qBook.id.gt(minBookId)
 				.and(qBook.id.lt(maxBookId)))
 			.fetch();
-
 	}
 }

@@ -8,12 +8,11 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.security.AuthProvider;
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.nhnacademy.batch.entity.Purchase;
+import com.nhnacademy.batch.entity.purchase.Purchase;
 import com.nhnacademy.batch.entity.member.enums.Grade;
 import com.nhnacademy.batch.entity.member.enums.Status;
 

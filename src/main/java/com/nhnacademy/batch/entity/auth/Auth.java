@@ -1,5 +1,6 @@
-package com.nhnacademy.batch.entity;
+package com.nhnacademy.batch.entity.auth;
 
+import com.nhnacademy.batch.entity.memberauth.MemberAuth;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;

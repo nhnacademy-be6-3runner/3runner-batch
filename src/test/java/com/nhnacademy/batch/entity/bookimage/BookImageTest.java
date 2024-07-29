@@ -1,4 +1,4 @@
-package com.nhnacademy.batch.entity.bookImage;
+package com.nhnacademy.batch.entity.bookimage;
 
 import static org.assertj.core.api.Assertions.*;
 
@@ -9,8 +9,8 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import com.nhnacademy.batch.entity.book.Book;
-import com.nhnacademy.batch.entity.bookImage.enums.BookImageType;
-import com.nhnacademy.batch.entity.totalImage.TotalImage;
+import com.nhnacademy.batch.entity.bookimage.enums.BookImageType;
+import com.nhnacademy.batch.entity.totalimage.TotalImage;
 
 import jakarta.persistence.EntityManager;
 

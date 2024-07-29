@@ -28,5 +28,4 @@ public class CouponBatchScheduleTask {
 			log.error(e.getMessage());
 		}
 	}
-
 }

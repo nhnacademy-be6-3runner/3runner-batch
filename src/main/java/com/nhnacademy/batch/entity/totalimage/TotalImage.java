@@ -1,6 +1,6 @@
-package com.nhnacademy.batch.entity.totalImage;
+package com.nhnacademy.batch.entity.totalimage;
 
-import com.nhnacademy.batch.entity.bookImage.BookImage;
+import com.nhnacademy.batch.entity.bookimage.BookImage;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;

@@ -4,9 +4,9 @@ import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.nhnacademy.batch.entity.bookCategory.BookCategory;
-import com.nhnacademy.batch.entity.bookImage.BookImage;
-import com.nhnacademy.batch.entity.bookTag.BookTag;
+import com.nhnacademy.batch.entity.bookcategory.BookCategory;
+import com.nhnacademy.batch.entity.bookimage.BookImage;
+import com.nhnacademy.batch.entity.booktag.BookTag;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;

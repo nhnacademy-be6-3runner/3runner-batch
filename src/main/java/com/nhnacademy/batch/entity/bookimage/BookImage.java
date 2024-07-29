@@ -1,8 +1,8 @@
-package com.nhnacademy.batch.entity.bookImage;
+package com.nhnacademy.batch.entity.bookimage;
 
 import com.nhnacademy.batch.entity.book.Book;
-import com.nhnacademy.batch.entity.bookImage.enums.BookImageType;
-import com.nhnacademy.batch.entity.totalImage.TotalImage;
+import com.nhnacademy.batch.entity.bookimage.enums.BookImageType;
+import com.nhnacademy.batch.entity.totalimage.TotalImage;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;

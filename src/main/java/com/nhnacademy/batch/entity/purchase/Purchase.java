@@ -1,15 +1,11 @@
-package com.nhnacademy.batch.entity;
+package com.nhnacademy.batch.entity.purchase;
 
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
-import java.time.ZoneId;
 import java.time.ZonedDateTime;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
 import java.util.UUID;
 
 import com.nhnacademy.batch.entity.enums.PurchaseStatus;

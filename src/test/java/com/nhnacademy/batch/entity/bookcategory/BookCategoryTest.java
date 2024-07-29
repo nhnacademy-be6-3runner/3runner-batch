@@ -1,4 +1,4 @@
-package com.nhnacademy.batch.entity.bookCategory;
+package com.nhnacademy.batch.entity.bookcategory;
 
 import static org.assertj.core.api.Assertions.*;
 

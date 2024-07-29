@@ -3,7 +3,7 @@ package com.nhnacademy.batch.entity.tag;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.nhnacademy.batch.entity.bookTag.BookTag;
+import com.nhnacademy.batch.entity.booktag.BookTag;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;

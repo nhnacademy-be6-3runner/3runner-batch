@@ -1,7 +1,7 @@
-package com.nhnacademy.batch.entity.bookTag;
+package com.nhnacademy.batch.entity.bookcategory;
 
 import com.nhnacademy.batch.entity.book.Book;
-import com.nhnacademy.batch.entity.tag.Tag;
+import com.nhnacademy.batch.entity.category.Category;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -13,24 +13,20 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Getter
 @NoArgsConstructor
-public class BookTag {
+@Getter
+public class BookCategory {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 
-	@Setter
 	@ManyToOne
+	@Setter
 	private Book book;
 
-	@Setter
 	@ManyToOne
-	private Tag tag;
+	@Setter
+	private Category category;
 
-	public BookTag(Book book, Tag tag) {
-		this.book = book;
-		this.tag = tag;
-	}
 }

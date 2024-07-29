@@ -15,9 +15,9 @@ import com.nhnacademy.batch.batch.book.book.repository.BookCustomRepository;
 import com.nhnacademy.batch.batch.book.book.repository.impl.BookCustomRepositoryImpl;
 import com.nhnacademy.batch.batch.book.book.response.BookDocument;
 import com.nhnacademy.batch.entity.book.Book;
-import com.nhnacademy.batch.entity.bookImage.BookImage;
-import com.nhnacademy.batch.entity.bookImage.enums.BookImageType;
-import com.nhnacademy.batch.entity.totalImage.TotalImage;
+import com.nhnacademy.batch.entity.bookimage.BookImage;
+import com.nhnacademy.batch.entity.bookimage.enums.BookImageType;
+import com.nhnacademy.batch.entity.totalimage.TotalImage;
 
 import jakarta.persistence.EntityManager;
 

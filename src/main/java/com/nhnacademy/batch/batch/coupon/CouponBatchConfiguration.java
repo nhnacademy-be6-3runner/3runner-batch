@@ -58,7 +58,7 @@ public class CouponBatchConfiguration {
     }
     @Bean
     public JpaItemWriter<Member> couponWriter(){
-        JpaItemWriter<Member> writer = new JpaItemWriter<Member>();
+        JpaItemWriter<Member> writer = new JpaItemWriter<>();
         writer.setEntityManagerFactory(entityManagerFactory);
         return writer;
     }

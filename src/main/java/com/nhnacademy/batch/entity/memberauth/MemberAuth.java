@@ -1,5 +1,6 @@
-package com.nhnacademy.batch.entity;
+package com.nhnacademy.batch.entity.memberauth;
 
+import com.nhnacademy.batch.entity.auth.Auth;
 import com.nhnacademy.batch.entity.member.Member;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;

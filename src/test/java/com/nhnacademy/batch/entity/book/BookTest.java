@@ -11,11 +11,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-import com.nhnacademy.batch.entity.bookCategory.BookCategory;
-import com.nhnacademy.batch.entity.bookImage.BookImage;
-import com.nhnacademy.batch.entity.bookImage.enums.BookImageType;
-import com.nhnacademy.batch.entity.bookTag.BookTag;
-import com.nhnacademy.batch.entity.totalImage.TotalImage;
+import com.nhnacademy.batch.entity.bookcategory.BookCategory;
+import com.nhnacademy.batch.entity.bookimage.BookImage;
+import com.nhnacademy.batch.entity.bookimage.enums.BookImageType;
+import com.nhnacademy.batch.entity.booktag.BookTag;
+import com.nhnacademy.batch.entity.totalimage.TotalImage;
 
 import jakarta.persistence.EntityManager;
 

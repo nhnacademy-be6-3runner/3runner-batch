@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import com.nhnacademy.batch.batch.book.category.repository.CategoryCustomRepository;
 import com.nhnacademy.batch.batch.book.category.response.BookCategoryResponse;
-import com.nhnacademy.batch.entity.bookCategory.QBookCategory;
+import com.nhnacademy.batch.entity.bookcategory.QBookCategory;
 import com.nhnacademy.batch.entity.category.QCategory;
 import com.querydsl.core.types.Projections;
 import com.querydsl.jpa.impl.JPAQueryFactory;

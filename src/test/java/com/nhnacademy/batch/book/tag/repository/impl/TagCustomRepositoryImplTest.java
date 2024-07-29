@@ -16,7 +16,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import com.nhnacademy.batch.batch.book.tag.repository.impl.TagCustomRepositoryImpl;
 import com.nhnacademy.batch.batch.book.tag.response.BookTagResponse;
 import com.nhnacademy.batch.entity.book.Book;
-import com.nhnacademy.batch.entity.bookTag.BookTag;
+import com.nhnacademy.batch.entity.booktag.BookTag;
 import com.nhnacademy.batch.entity.tag.Tag;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 

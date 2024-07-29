@@ -1,4 +1,4 @@
-package com.nhnacademy.batch;
+package com.nhnacademy.batch.batch.member;
 
 import com.nhnacademy.batch.entity.enums.PurchaseStatus;
 import com.nhnacademy.batch.entity.member.Member;
