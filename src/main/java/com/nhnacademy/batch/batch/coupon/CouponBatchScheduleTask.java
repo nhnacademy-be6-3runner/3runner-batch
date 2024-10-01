@@ -10,6 +10,11 @@ import org.springframework.batch.core.launch.JobLauncher;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
+/**
+ * 쿠폰 배치 서비스.
+ *
+ * @author 김병우
+ */
 @Slf4j
 @Component
 @RequiredArgsConstructor
